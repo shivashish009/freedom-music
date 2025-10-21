@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freedom Music - Your Ultimate Music Experience</title>
+    <meta name="description" content="Freedom Music - Stream unlimited music for free. Download, listen offline, and enjoy ad-free music with premium features.">
+    <meta name="author" content="Shivashish Chaudhary">
+    <title>Freedom Music - Beyond Premium</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,565 +18,1132 @@
         }
 
         :root {
-            --primary-color: #6366f1;
-            --secondary-color: #8b5cf6;
-            --accent-color: #ec4899;
-            --dark-bg: #0f172a;
-            --card-bg: #1e293b;
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
+            --holographic-1: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            --holographic-2: linear-gradient(135deg, #fa709a 0%, #fee140 25%, #30cfd0 50%, #330867 75%, #667eea 100%);
+            --holographic-3: linear-gradient(135deg, #ff0844 0%, #ffb199 25%, #ff0844 50%, #ffb199 75%, #ff0844 100%);
+            --neon-gold: #FFD700;
+            --neon-purple: #B87FFF;
+            --neon-cyan: #00F5FF;
+            --neon-pink: #FF10F0;
+            --rich-black: #000000;
+            --deep-space: #050505;
+            --glass-white: rgba(255, 255, 255, 0.04);
+            --glass-border: rgba(255, 255, 255, 0.12);
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes holographic-float {
+            0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+            33% { transform: translateY(-30px) scale(1.05) rotate(3deg); }
+            66% { transform: translateY(15px) scale(0.95) rotate(-3deg); }
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { opacity: 0.5; filter: blur(40px); }
+            50% { opacity: 0.8; filter: blur(60px); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes rotate-gradient {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            background: #000000;
+            color: #ffffff;
             overflow-x: hidden;
-            line-height: 1.6;
+            position: relative;
         }
 
-        /* Navbar */
+        /* Ultra-premium animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 16, 240, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 245, 255, 0.15) 0%, transparent 50%);
+            animation: rotate-gradient 30s linear infinite;
+            z-index: 0;
+        }
+
+        /* Holographic orbs */
+        .holo-orb {
+            position: fixed;
+            border-radius: 50%;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite, glow-pulse 4s ease-in-out infinite;
+            pointer-events: none;
+            mix-blend-mode: screen;
+        }
+
+        .holo-orb-1 {
+            width: 600px;
+            height: 600px;
+            top: -10%;
+            right: -10%;
+            z-index: 0;
+        }
+
+        .holo-orb-2 {
+            width: 500px;
+            height: 500px;
+            bottom: -5%;
+            left: -10%;
+            z-index: 0;
+            animation-delay: 5s;
+        }
+
+        .holo-orb-3 {
+            width: 450px;
+            height: 450px;
+            top: 40%;
+            left: 50%;
+            z-index: 0;
+            animation-delay: 10s;
+        }
+
+        /* Stunning Navigation */
         nav {
             position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 5%;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            padding: 16px 40px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(40px) saturate(200%);
+            -webkit-backdrop-filter: blur(40px) saturate(200%);
+            border: 2px solid transparent;
+            border-radius: 100px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                inset 0 0 0 2px rgba(255, 255, 255, 0.1),
+                0 0 40px rgba(102, 126, 234, 0.2);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background-image: var(--holographic-1);
+            background-size: 400% 400%;
+            background-clip: padding-box;
+            animation: gradient-shift 20s ease infinite;
+        }
+
+        nav::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 100px;
+            padding: 2px;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 20s ease infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        nav:hover {
+            transform: translateX(-50%) translateY(-4px);
+            box-shadow: 
+                0 30px 80px rgba(102, 126, 234, 0.4),
+                inset 0 0 0 2px rgba(255, 255, 255, 0.2),
+                0 0 60px rgba(102, 126, 234, 0.4);
         }
 
         .nav-container {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
+            gap: 4rem;
+            position: relative;
+            z-index: 1;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, var(--neon-cyan), var(--neon-purple));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.7rem;
+            letter-spacing: 1px;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--text-primary);
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--holographic-1);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
         }
 
         .mobile-menu {
             display: none;
-            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* Cinematic Hero */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 8rem 5% 4rem;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
-            top: -250px;
-            right: -250px;
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%);
-            bottom: -200px;
-            left: -200px;
-            animation: pulse 5s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 0.8; }
-        }
-
-        .hero-content {
-            max-width: 1400px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            padding: 14rem 5% 6rem;
             position: relative;
             z-index: 1;
         }
 
+        .hero-content {
+            max-width: 1600px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 8rem;
+            align-items: center;
+        }
+
         .hero-text h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4rem, 8vw, 7.5rem);
+            font-weight: 900;
+            line-height: 0.95;
+            margin-bottom: 2.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--neon-cyan) 50%, var(--neon-purple) 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.2;
+            letter-spacing: -0.04em;
+            position: relative;
+            animation: holographic-float 6s ease-in-out infinite;
+        }
+
+        .hero-text h1::after {
+            content: '';
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            width: 120px;
+            height: 5px;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            border-radius: 10px;
         }
 
         .hero-text p {
-            font-size: 1.3rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
+            font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3.5rem;
+            line-height: 1.8;
+            font-weight: 300;
+            letter-spacing: 0.5px;
         }
 
-        .download-btn {
+        /* Stunning Buttons */
+        .stunning-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.8rem;
-            padding: 1.2rem 2.5rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
+            gap: 1.2rem;
+            padding: 1.8rem 4rem;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(40px);
+            border: 2px solid transparent;
+            border-radius: 100px;
+            color: #ffffff;
             text-decoration: none;
-            border-radius: 50px;
             font-size: 1.1rem;
             font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
         }
 
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.6);
+        .stunning-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 100px;
+            padding: 2px;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
         }
 
-        .hero-image {
+        .stunning-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .stunning-btn:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        .stunning-btn:hover {
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 0 30px 80px rgba(102, 126, 234, 0.5);
+        }
+
+        .stunning-btn i,
+        .stunning-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-secondary {
+            margin-left: 2rem;
+            background: transparent;
+        }
+
+        /* 3D Phone with Holographic Effect */
+        .hero-visual {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+            perspective: 1500px;
         }
 
-        .phone-mockup {
-            width: 300px;
-            height: 600px;
-            background: linear-gradient(135deg, var(--card-bg), #334155);
-            border-radius: 40px;
-            padding: 15px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        .stunning-phone {
+            width: 380px;
+            height: 760px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(40px);
+            border: 3px solid transparent;
+            border-radius: 60px;
+            padding: 16px;
             position: relative;
-            overflow: hidden;
-            animation: float 3s ease-in-out infinite;
+            transform-style: preserve-3d;
+            animation: holographic-float 8s ease-in-out infinite;
+            box-shadow: 
+                0 50px 100px rgba(0, 0, 0, 0.8),
+                0 0 80px rgba(102, 126, 234, 0.3),
+                inset 0 0 0 3px rgba(255, 255, 255, 0.1);
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        .stunning-phone::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 60px;
+            padding: 3px;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
         }
 
         .phone-screen {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #4c1d95, #6366f1);
-            border-radius: 30px;
+            background: linear-gradient(135deg, #000000 0%, #1a0033 50%, #000000 100%);
+            border-radius: 50px;
+            padding: 3rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
+            gap: 2.5rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .phone-screen i {
-            font-size: 5rem;
-            color: white;
+        .phone-screen::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(102, 126, 234, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(255, 16, 240, 0.15) 0%, transparent 50%);
+            animation: rotate-gradient 25s linear infinite;
+        }
+
+        .phone-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: #000;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .phone-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, var(--neon-cyan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Stunning Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4.5rem;
+        }
+
+        .stat-stunning {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(40px);
+            border: 2px solid transparent;
+            border-radius: 30px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-stunning::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 30px;
+            padding: 2px;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .stat-stunning:hover::before {
+            opacity: 1;
+        }
+
+        .stat-stunning:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 30px 80px rgba(102, 126, 234, 0.4);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         /* Features Section */
         .features {
-            padding: 6rem 5%;
-            background: var(--dark-bg);
+            padding: 12rem 5%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 8rem;
         }
 
         .section-title {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 7vw, 6rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, var(--neon-cyan) 50%, var(--neon-purple) 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
         }
 
         .section-subtitle {
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            margin-bottom: 4rem;
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+            letter-spacing: 1px;
         }
 
         .features-grid {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
         }
 
-        .feature-card {
-            background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid rgba(99, 102, 241, 0.1);
+        .stunning-card {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(40px);
+            border: 2px solid transparent;
+            border-radius: 35px;
+            padding: 3.5rem;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        .stunning-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 35px;
+            padding: 2px;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.6s ease;
         }
 
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 15px;
+        .stunning-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            animation: rotate-gradient 20s linear infinite;
+        }
+
+        .stunning-card:hover::before,
+        .stunning-card:hover::after {
+            opacity: 1;
+        }
+
+        .stunning-card:hover {
+            transform: translateY(-15px) rotateX(5deg) scale(1.02);
+            box-shadow: 0 40px 100px rgba(102, 126, 234, 0.4);
+        }
+
+        .feature-icon-stunning {
+            width: 90px;
+            height: 90px;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            border-radius: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-icon-stunning i {
+            font-size: 2.5rem;
+            color: #000;
+        }
+
+        .stunning-card h3 {
+            font-family: 'Playfair Display', serif;
             font-size: 2rem;
+            font-weight: 700;
             margin-bottom: 1.5rem;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
         }
 
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .stunning-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.9;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
         }
 
-        .feature-card p {
-            color: var(--text-secondary);
-            line-height: 1.8;
+        /* About Section */
+        .about {
+            padding: 12rem 5%;
+            position: relative;
+            z-index: 1;
         }
 
-        /* About Developer Section */
-        .about-dev {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--card-bg), var(--dark-bg));
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(40px);
+            border: 2px solid transparent;
+            border-radius: 45px;
+            padding: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 45px;
+            padding: 2px;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
         }
 
         .about-content {
-            max-width: 1000px;
-            margin: 0 auto;
             display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 4rem;
+            grid-template-columns: 320px 1fr;
+            gap: 6rem;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
-        .dev-image {
-            width: 300px;
-            height: 300px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        .dev-avatar-stunning {
+            width: 320px;
+            height: 320px;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            border-radius: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 8rem;
-            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+            font-size: 9rem;
+            box-shadow: 0 40px 100px rgba(102, 126, 234, 0.5);
+            position: relative;
+        }
+
+        .dev-avatar-stunning i {
+            color: #000;
         }
 
         .dev-info h2 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, var(--neon-cyan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .dev-handle {
-            color: var(--primary-color);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 1.2rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
         }
 
         .dev-title {
-            font-size: 1.1rem;
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid var(--neon-cyan);
+            border-radius: 50px;
+            color: var(--neon-cyan);
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2.5rem;
+            font-size: 0.9rem;
         }
 
         .dev-info p {
-            color: var(--text-secondary);
-            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 2;
             margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
         }
 
         .social-links {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
 
-        .social-btn {
-            width: 50px;
-            height: 50px;
+        .social-stunning {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(40px);
+            border: 2px solid transparent;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #fff;
             text-decoration: none;
-            font-size: 1.3rem;
-            transition: transform 0.3s;
+            font-size: 1.8rem;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .social-btn:hover {
-            transform: translateY(-5px);
+        .social-stunning::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            padding: 2px;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .social-stunning:hover {
+            transform: translateY(-8px) scale(1.15) rotateZ(10deg);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.5);
         }
 
         /* Download Section */
-        .download-section {
-            padding: 6rem 5%;
-            background: var(--dark-bg);
-            text-align: center;
+        .download {
+            padding: 12rem 5% 14rem;
+            position: relative;
+            z-index: 1;
         }
 
-        .download-container {
-            max-width: 800px;
+        .download-stunning {
+            max-width: 1100px;
             margin: 0 auto;
-            background: var(--card-bg);
-            padding: 4rem;
-            border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(40px);
+            border: 2px solid transparent;
+            border-radius: 45px;
+            padding: 7rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .download-container h2 {
+        .download-stunning::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 45px;
+            padding: 2px;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .download-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-stunning h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #fff, var(--neon-cyan), var(--neon-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .download-stunning > p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            margin-bottom: 5rem;
+            font-weight: 300;
+        }
+
+        .version-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin: 5rem 0;
+        }
+
+        .version-stunning {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(40px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 3rem 2.5rem;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .version-stunning:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(102, 126, 234, 0.4);
+            border-color: var(--neon-cyan);
+        }
+
+        .version-stunning strong {
+            display: block;
+            font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--holographic-1);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
         }
 
-        .download-container p {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-size: 1.2rem;
+        .version-stunning span {
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.95rem;
         }
 
-        .version-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
+        .security-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 3rem;
+            padding: 1.2rem 2.5rem;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            letter-spacing: 1px;
         }
 
-        .info-item {
-            text-align: center;
-        }
-
-        .info-item strong {
-            display: block;
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+        .security-badge i {
+            color: var(--neon-cyan);
+            font-size: 1.3rem;
         }
 
         /* Footer */
         footer {
-            padding: 2rem 5%;
-            background: var(--card-bg);
+            padding: 5rem 5%;
             text-align: center;
-            color: var(--text-secondary);
+            border-top: 2px solid rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(40px);
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0.8rem 0;
+            letter-spacing: 1px;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .hero-content {
+        @media (max-width: 1024px) {
+            .hero-content,
+            .about-content {
                 grid-template-columns: 1fr;
+                gap: 5rem;
                 text-align: center;
             }
 
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-image {
+            .hero-visual {
                 order: -1;
             }
 
-            .phone-mockup {
-                width: 250px;
-                height: 500px;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .dev-image {
+            .dev-avatar-stunning {
                 margin: 0 auto;
             }
 
             .social-links {
                 justify-content: center;
             }
+        }
 
-            .section-title {
-                font-size: 2rem;
+        @media (max-width: 768px) {
+            nav {
+                top: 20px;
+                padding: 14px 28px;
+            }
+
+            .nav-container {
+                gap: 0;
+                justify-content: space-between;
+                width: 320px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(40px);
+                border: 2px solid rgba(255, 255, 255, 0.1);
+                border-radius: 30px;
+                padding: 2rem;
+                gap: 2rem;
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.4s ease;
+                min-width: 250px;
+            }
+
+            .nav-links.active {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .stunning-phone {
+                width: 300px;
+                height: 600px;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 2rem;
+            }
+
+            .version-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-container,
+            .download-stunning {
+                padding: 4rem 3rem;
             }
         }
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+        @media (max-width: 480px) {
+            .stunning-phone {
+                width: 260px;
+                height: 530px;
+            }
 
-        .stat-item {
-            text-align: center;
-        }
+            .stunning-card {
+                padding: 2.5rem;
+            }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
+            .stunning-btn {
+                padding: 1.5rem 3rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <div class="holo-orb holo-orb-1"></div>
+    <div class="holo-orb holo-orb-2"></div>
+    <div class="holo-orb holo-orb-3"></div>
+
     <nav>
         <div class="nav-container">
             <div class="logo">
                 <i class="fas fa-music"></i>
-                Freedom Music
+                Freedom
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#about">About Developer</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#download">Download</a></li>
             </ul>
-            <div class="mobile-menu">
+            <button class="mobile-menu" id="mobileMenu">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Experience Music Freedom</h1>
-                <p>Your ultimate music companion. Stream, download, and enjoy unlimited music with zero restrictions. Ad-free, premium features, all for free.</p>
-                <a href="https://drive.google.com/uc?export=download&id=1lu7-yhHie7fN8kJObtCAZeeGGOc5iA7B" class="download-btn">
-
-                    <i class="fab fa-android"></i>
-                    Download APK
-                </a>
+                <p>Indulge in the extraordinary. Stream unlimited premium music, download for offline luxury, and enjoy an unparalleled ad-free experience—all completely free.</p>
+                <div>
+                    <a href="https://drive.google.com/uc?export=download&id=1lu7-yhHie7fN8kJObtCAZeeGGOc5iA7B" class="stunning-btn">
+                        <i class="fab fa-android"></i>
+                        <span>Download</span>
+                    </a>
+                    <a href="#features" class="stunning-btn btn-secondary">
+                        <span>Explore</span>
+                    </a>
+                </div>
                 <div class="stats">
-                    <div class="stat-item">
+                    <div class="stat-stunning">
                         <div class="stat-number">50M+</div>
                         <div class="stat-label">Songs</div>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-stunning">
                         <div class="stat-number">100%</div>
                         <div class="stat-label">Free</div>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-stunning">
                         <div class="stat-number">0</div>
                         <div class="stat-label">Ads</div>
                     </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="phone-mockup">
+            <div class="hero-visual">
+                <div class="stunning-phone">
                     <div class="phone-screen">
-                        <i class="fas fa-music"></i>
-                        <h3>Freedom Music</h3>
+                        <div class="phone-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="phone-text">Freedom Music</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features" id="features">
-        <h2 class="section-title">Premium Features</h2>
-        <p class="section-subtitle">Everything you need for the ultimate music experience</p>
+        <div class="section-header">
+            <h2 class="section-title">Premium Features</h2>
+            <p class="section-subtitle">Crafted for the extraordinary</p>
+        </div>
         <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
+            <div class="stunning-card">
+                <div class="feature-icon-stunning">
                     <i class="fas fa-infinity"></i>
                 </div>
                 <h3>Unlimited Streaming</h3>
                 <p>Access millions of songs from around the world. Stream unlimited music without any restrictions or daily limits.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
+            <div class="stunning-card">
+                <div class="feature-icon-stunning">
                     <i class="fas fa-download"></i>
                 </div>
                 <h3>Offline Downloads</h3>
                 <p>Download your favorite tracks and playlists to listen offline anytime, anywhere without internet connection.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
+            <div class="stunning-card">
+                <div class="feature-icon-stunning">
                     <i class="fas fa-ban"></i>
                 </div>
                 <h3>Ad-Free Experience</h3>
                 <p>Enjoy uninterrupted music with zero advertisements. Pure music, no distractions, completely free forever.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
+            <div class="stunning-card">
+                <div class="feature-icon-stunning">
                     <i class="fas fa-volume-up"></i>
                 </div>
                 <h3>High Quality Audio</h3>
                 <p>Experience crystal clear sound with high-definition audio streaming up to 320kbps for premium listening.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
+            <div class="stunning-card">
+                <div class="feature-icon-stunning">
                     <i class="fas fa-list"></i>
                 </div>
                 <h3>Custom Playlists</h3>
                 <p>Create unlimited playlists, organize your music library, and discover personalized recommendations daily.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
+            <div class="stunning-card">
+                <div class="feature-icon-stunning">
                     <i class="fas fa-mobile-alt"></i>
                 </div>
                 <h3>Lightweight & Fast</h3>
@@ -580,101 +1152,137 @@
         </div>
     </section>
 
-    <!-- About Developer Section -->
-    <section class="about-dev" id="about">
-        <h2 class="section-title">About the Developer</h2>
-        <p class="section-subtitle">Meet the mind behind Freedom Music</p>
-        <div class="about-content">
-            <div class="dev-image">
-                <i class="fas fa-user-circle"></i>
-            </div>
-            <div class="dev-info">
-                <h2>Shivashish Chaudhary</h2>
-                <div class="dev-handle">@Shivashish_009</div>
-                <div class="dev-title">CEO & Builder</div>
-                <p>A passionate full-stack developer and cybersecurity enthusiast dedicated to creating innovative solutions that empower users. With expertise in web development, mobile applications, and a vision for accessible technology, Shivashish builds products that prioritize user freedom and experience.</p>
-                <p>Freedom Music is born from the belief that premium music experiences shouldn't be locked behind paywalls. This project combines cutting-edge technology with user-centric design to deliver a truly liberating music platform.</p>
-                <div class="social-links">
-                    <a href="https://instagram.com/shivashish_009" target="_blank" class="social-btn" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://github.com/shivashish009?tab=repositories" target="_blank" class="social-btn" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
+    <section class="about" id="about">
+        <div class="section-header">
+            <h2 class="section-title">About the Developer</h2>
+            <p class="section-subtitle">The visionary behind the experience</p>
+        </div>
+        <div class="about-container">
+            <div class="about-content">
+                <div class="dev-avatar-stunning">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="dev-info">
+                    <h2>Shivashish Chaudhary</h2>
+                    <div class="dev-handle">@Shivashish_009</div>
+                    <div class="dev-title">CEO & Builder</div>
+                    <p>A passionate full-stack developer and cybersecurity enthusiast dedicated to creating innovative solutions that empower users. With expertise in web development, mobile applications, and a vision for accessible technology, Shivashish builds products that prioritize user freedom and experience.</p>
+                    <p>Freedom Music is born from the belief that premium music experiences shouldn't be locked behind paywalls. This project combines cutting-edge technology with user-centric design to deliver a truly liberating music platform.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/shivashish_009" target="_blank" rel="noopener noreferrer" class="social-stunning">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/shivashish009?tab=repositories" target="_blank" rel="noopener noreferrer" class="social-stunning">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Download Section -->
-    <section class="download-section" id="download">
-        <div class="download-container">
-            <h2>Download Freedom Music</h2>
-            <p>Get the latest version now and start your unlimited music journey</p>
-            <div class="version-info">
-                <div class="info-item">
-                    <strong>v1.0.0</strong>
-                    <span>Latest Version</span>
+    <section class="download" id="download">
+        <div class="download-stunning">
+            <div class="download-content">
+                <h2>Download Freedom Music</h2>
+                <p>Experience the future of music streaming</p>
+                <div class="version-grid">
+                    <div class="version-stunning">
+                        <strong>v1.0.0</strong>
+                        <span>Latest Version</span>
+                    </div>
+                    <div class="version-stunning">
+                        <strong>29 MB</strong>
+                        <span>Download Size</span>
+                    </div>
+                    <div class="version-stunning">
+                        <strong>Android 6.0+</strong>
+                        <span>Requirements</span>
+                    </div>
                 </div>
-                <div class="info-item">
-                    <strong>29 MB</strong>
-                    <span>Download Size</span>
-                </div>
-                <div class="info-item">
-                    <strong>Android 6.0+</strong>
-                    <span>Requirements</span>
+                <a href="https://drive.google.com/uc?export=download&id=1lu7-yhHie7fN8kJObtCAZeeGGOc5iA7B" class="stunning-btn">
+                    <i class="fab fa-android"></i>
+                    <span>Download Now</span>
+                </a>
+                <div class="security-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Safe and secure. No registration required.</span>
                 </div>
             </div>
-            <a href="https://drive.google.com/uc?export=download&id=1lu7-yhHie7fN8kJObtCAZeeGGOc5iA7B" class="download-btn">
-
-                <i class="fab fa-android"></i>
-                Download APK Now
-            </a>
-            <p style="margin-top: 2rem; font-size: 0.9rem;">
-                <i class="fas fa-shield-alt"></i> Safe and secure download. No registration required.
-            </p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Freedom Music. Built with ❤️ by Shivashish Chaudhary</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">All features free forever. No subscriptions, no ads.</p>
+        <p>&copy; 2025 Freedom Music. Crafted with excellence by Shivashish Chaudhary</p>
+        <p>All features free forever. No subscriptions, no ads.</p>
     </footer>
 
     <script>
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
 
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(15, 23, 42, 0.98)';
-            } else {
-                nav.style.background = 'rgba(15, 23, 42, 0.95)';
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenu.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav')) {
+                navLinks.classList.remove('active');
+                const icon = mobileMenu.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
             }
         });
 
-        // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenu.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileMenu.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // 3D tilt effect on cards
+        document.querySelectorAll('.stunning-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                card.style.transform = `translateY(-15px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const orbs = document.querySelectorAll('.holo-orb');
+            orbs.forEach((orb, index) => {
+                const speed = 0.2 + (index * 0.1);
+                orb.style.transform = `translateY(${scrolled * speed}px)`;
+            });
         });
     </script>
 </body>
 </html>
-
